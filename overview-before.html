@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tacotron Implementation Example</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/menu.css"> 
+</head>
+<style>
+    .collapsible {
+      background-color: rgba(0, 0, 0, .5);
+      color: white;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      border-radius: 15px;
+    }
+    
+    .active, .collapsible:hover {
+      background-color: #00AC94;
+    }
+    
+    .content {
+      padding: 0 18px;
+      display: none;
+      overflow: hidden;
+      background-color: white;
+      margin-bottom: 10px;
+      border-radius: 15px;
+      
+    }
+
+    .content a{
+        color: black;
+    }
+    </style>
+
+<body>
+    <div class="container" style="margin-top: 3px;">
+        <div class="picture">
+          <img src="img/tt1.png" alt="funny robot asking you to proceed" style="height: 300px;">
+        </div>
+        <div class="point">
+            <h2>Tacotron Implementation Examples</h2>
+            <audio controls>
+                <source src="wav/1.wav" type="audio/wav">
+              Your browser does not support the audio element.
+              </audio>
+              <audio controls>
+                <source src="wav/2.wav" type="audio/wav">
+              Your browser does not support the audio element.
+              </audio>
+              <audio controls>
+                <source src="wav/3.wav" type="audio/wav">
+              Your browser does not support the audio element.
+              </audio>
+            <p>Text: Duke Kunshan University; Duke Kunshan is a world-class liberal arts university; <br>Duke University is a private research university in Durham, North Carolina.</p>
+        </div>
+        <a class="point" href="http://linyueqian.github.io/ml_intro/" style="margin-top: 3px;">A Simple Introduction on Machine Learning</a>
+
+    <button type="button" class="collapsible">Find Out More About Tacotron &amp; Tacotron2</button>
+        <div class="content">
+            <h2 id="feature">Feature</h2>
+            <ul>
+            <li><p>Take characters as input and output mel-spectrogram.</p>
+            </li>
+            <li><p>Use attention mechanism to align the input and output.</p>
+            </li>
+            <li><p>A <a href="https://arxiv.org/abs/1505.00387">Highway Network</a> is an architecture designed to ease gradient-based training of very deep networks.</p>
+            <pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x)</span>:</span>
+            <span class="hljs-string">"""
+                :param x: tensor with shape of [batch_size, size]
+                :return: tensor with shape of [batch_size, size]
+                applies σ(x) ⨀ (f(G(x))) + (1 - σ(x)) ⨀ (Q(x)) transformation | G and Q is affine transformation,
+                f is non-linear transformation, σ(x) is affine transformation with sigmoid non-linearition
+                and ⨀ is element-wise multiplication
+                """</span>
+                <span class="hljs-keyword">for</span> layer <span class="hljs-keyword">in</span> range(self.num_layers):
+                gate = F.sigmoid(self.gate[layer](x))
+            
+                nonlinear = self.f(self.nonlinear[layer](x))
+                linear = self.linear[layer](x)
+            
+                x = gate * nonlinear + (<span class="hljs-number">1</span> - gate) * linear
+            
+            <span class="hljs-keyword">return</span> x
+            </code></pre>
+            </li>
+            <li><p>A <a href="https://arxiv.org/abs/1512.03385">Residual Network</a> is a neural network that is trained with the residual learning framework. The basic building block of a residual network is the residual block, which takes an input and produces an output with the same dimensionality. The output of the residual block is calculated as:</p>
+            <pre><code>  <span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>y = f(x) + x<span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>
+            </code></pre><p>where $f(x)$ is a function that maps $x$ to a different output, and $x$ is the input to the residual block. The function $f(x)$ is often a deep neural network. The main idea of residual learning is to train such a residual network, where the function $f(x)$ is learned in an end-to-end fashion and can be arbitrarily deep when computing the mapping $f(x)$. The residual block allows the network to learn an effective transformation from the input to the output, and also allows it to learn an identity mapping with very little additional effort. The identity mapping is useful because it allows the network to skip layers when the input is close to the output, which can be beneficial when the network is very deep.</p>
+           
+            </li>
+            <li><p>Gated Recurrent Unit (GRU) is a type of recurrent network. It only has two gates, reset gate and update gate. The reset gate controls how much past information to forget, and the update gate controls how much past information to keep. The GRU is a simplified version of the LSTM, and it has fewer parameters than the LSTM. The GRU is also faster to compute than the LSTM.</p>
+            </li>
+            <li><p>PreNet is a network that is used before the RNN layers in the Tacotron model. It is a two-layer feed-forward network with ReLU activation. The first layer has 256 units, and the second layer has 128 units. The output of the PreNet is used as the input to the RNN layers.</p>
+            <pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PreNet</span>(<span class="hljs-title">nn</span>.<span class="hljs-title">Module</span>):</span>
+            <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(<span class="hljs-keyword">self</span>, in_dim, sizes=[<span class="hljs-number">256</span>, <span class="hljs-number">128</span>])</span></span>:
+                <span class="hljs-keyword">super</span>(PreNet, <span class="hljs-keyword">self</span>).__init_<span class="hljs-number">_</span>()
+                <span class="hljs-keyword">self</span>.layers = nn.ModuleList()
+                <span class="hljs-keyword">for</span> size <span class="hljs-keyword">in</span> <span class="hljs-symbol">sizes:</span>
+                    linear = nn.Linear(in_dim, size)
+                    <span class="hljs-keyword">self</span>.layers.append(linear)
+                    in_dim = size
+            
+            <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-keyword">self</span>, x)</span></span>:
+                <span class="hljs-keyword">for</span> linear <span class="hljs-keyword">in</span> <span class="hljs-keyword">self</span>.<span class="hljs-symbol">layers:</span>
+                    x = F.relu(linear(x))
+                    x = F.dropout(x, p=<span class="hljs-number">0</span>.<span class="hljs-number">5</span>, training=<span class="hljs-keyword">self</span>.training)
+                <span class="hljs-keyword">return</span> x
+            </code></pre>
+            </li>
+            <li><p>The decoder is a bidirectional GRU with 1024 units. The decoder takes the output of the attention mechanism as input. The output of the decoder is used to predict the mel-spectrogram.</p>
+            </li>
+            <li><p>GO frame is a vector of zeros. It is used as the first input to the decoder. The GO frame is used to predict the first mel-spectrogram frame.</p>
+            </li>
+            <li><p>Output layer reduction factor is the number of frames that the output layer predicts for each input frame. The output layer reduction factor is 2 for the Tacotron model.</p>
+            </li>
+            <li><p>Reduction in output timesteps: Since we produce several similar looking speech frames, the attention mechanism won’t really move from frame to frame. To alleviate this problem, the decoder is made to swallow inputs only every ‘r’ frames, while we dump r frames as output. For example, if r=2, then we dump 2 frames as output, but we only feed in the last frame as input to the decoder. Since we reduce the number of timesteps, the recurrent model should have an easier time with this approach. The authors note that this also helps the model in learning attention. (Copied from <a href="https://pravn.wordpress.com/tag/tts/">here</a>)</p>
+            </li>
+            <li><p>For example, a Seq2seq target with r=2 in the decoder in Tacotron can be represented as:</p>
+            <pre><code class="lang-python"><span class="hljs-meta"># target: [batch_size, seq_len]</span>
+            <span class="hljs-meta"># r: reduction factor</span>
+            <span class="hljs-meta"># output: [batch_size, seq_len // r, r]</span>
+            output = target[:, :target.size(<span class="hljs-number">1</span>) <span class="hljs-comment">// r * r].view(-1, r)</span>
+            </code></pre>
+            </li>
+            <li><p>In Tacotron 2, the output layer reduction factor is 1. The output layer predicts the mel-spectrogram frame for each input frame.</p>
+            </li>
+            <li><p>Other differences in Tacotron 2:</p>
+            <ul>
+            <li>The decoder is a unidirectional GRU with 1024 units.</li>
+            <li>The decoder takes the output of the attention mechanism and the previous mel-spectrogram frame as input.</li>
+            <li>The decoder predicts the stop token.</li>
+            <li>The stop token is used to determine when to stop generating mel-spectrogram frames.</li>
+            </ul>
+            </li>
+            <li><p>The attention mechanism is a location-sensitive attention mechanism. It uses the decoder’s hidden state and the encoder’s outputs to calculate the attention weights. The attention weights are then used to calculate the context vector, which is used to predict the mel-spectrogram.</p>
+            <ul>
+            <li>Attention alignment is the alignment between the input and output. The attention alignment is used to calculate the attention weights.</li>
+            </ul>
+            </li>
+            <li><p>Feed-forward network is a network with one or more hidden layers between the input and output layers. The hidden layers are fully connected layers. The output layer is a two-layer feed-forward network with ReLU activation. The first layer has 1024 units, and the second layer has 80 units.</p>
+            </li>
+            <li><p>The stop token is a binary value that indicates whether the synthesis is finished. The stop token is predicted by a single fully connected layer with a sigmoid activation function. The stop token is used to determine when to stop the synthesis.</p>
+            </li>
+            </ul>
+            <h2>References</h2>
+            <ul>
+            <li><a href="https://arxiv.org/abs/1703.10135">Tacotron: Towards End-to-End Speech Synthesis</a></li>
+            <li><a href="https://arxiv.org/abs/1712.05884">Natural TTS Synthesis by Conditioning WaveNet on Mel Spectrogram Predictions</a></li>
+            </ul>
+            
+        </div>
+        </div>
+    
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+        </script>
+
+</body>
+
+</html>

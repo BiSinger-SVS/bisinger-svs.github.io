@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Multivox Demo</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/menu.css"> 
+</head>
+<style>
+    .collapsible {
+      background-color: rgba(0, 0, 0, .5);
+      color: white;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      border-radius: 15px;
+    }
+    
+    .active, .collapsible:hover {
+      background-color: #00AC94;
+    }
+    
+    .content {
+      padding: 0 18px;
+      display: none;
+      overflow: hidden;
+      background-color: white;
+      margin-bottom: 10px;
+      border-radius: 15px;
+      
+    }
+
+    .content a{
+        color: black;
+    }
+    </style>
+
+<body>
+    <div class="container" style="margin-top: 3px;">
+        <div class="picture">
+          <img src="./img/DKU.jpg" alt="DKU logo" style="height: 100px;">
+        </div>
+        <div class="point">
+            <h1>MultiVox: Multilingual Voice Synthesis for Singing</h1>
+            <h2>Demos on STATS402 Project</h2>
+            <h2>Yueqian Lin</h2>
+            <h2>Samples of DKU Alma Mater</h2>
+            <center>
+            <table>
+            <tr>
+              <th>Ground Truth (CHN)</th>
+              <th>Synthesized (CHN)</th>
+              <th>Synthesized (ENG)</th>
+            </tr>
+            <tr>
+              <td> <audio controls>
+                <source src="wav/gt_cn.wav" type="audio/wav">
+              Your browser does not support the audio element.
+              </audio></td>
+              <td> <audio controls>
+                <source src="wav/combined_cn.wav" type="audio/wav">
+              Your browser does not support the audio element.
+              </audio></td>
+              <td> <audio controls>
+                <source src="wav/combined_en.wav" type="audio/wav">
+              Your browser does not support the audio element.
+              </audio></td>
+            </tr>
+          </table>
+            </center>
+              <h2 class="title">Music Notes and Lyrics</h2>
+        
+              <iframe  src="pdf/cn.pdf" width="100%" height="550">
+                  </iframe>
+                
+        </div>
+        <a class="point" href="#" style="margin-top: 3px;">Work in Progress: Stage III</a>
+<!-- 
+    <button type="button" class="collapsible">Find Out More About Tacotron &amp; Tacotron2</button>
+        <div class="content">
+            
+        </div>
+        </div> -->
+    
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+        </script>
+
+</body>
+
+</html>
