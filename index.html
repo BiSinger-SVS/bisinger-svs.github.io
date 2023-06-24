@@ -1,131 +1,507 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Multivox Demo</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/menu.css"> 
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Bilingual Voice Synthesis for Singing
+  <meta name="keywords" content="BiSinger">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BiSinger: Bilingual Voice Synthesis for Singing</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KJV8E6F189"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-KJV8E6F189');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
 </head>
-<style>
-    .collapsible {
-      background-color: rgba(0, 0, 0, .5);
-      color: white;
-      cursor: pointer;
-      padding: 18px;
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
-      font-size: 15px;
-      border-radius: 15px;
-    }
-    
-    .active, .collapsible:hover {
-      background-color: #00AC94;
-    }
-    
-    .content {
-      padding: 0 18px;
-      display: none;
-      overflow: hidden;
-      background-color: white;
-      margin-bottom: 10px;
-      border-radius: 15px;
-      
-    }
-
-    .content a{
-        color: black;
-    }
-    </style>
-
 <body>
-    <div class="container" style="margin-top: 3px;">
-        <div class="picture">
-          <img src="./img/DKU.jpg" alt="DKU logo" style="height: 100px;">
-        </div>
-        <div class="point">
-            <h1>MultiVox: Multilingual Voice Synthesis for Singing</h1>
-            <h2>Demos on STATS402 Project</h2>
-            <h2>Yueqian Lin</h2>
-            <h2>Previously Unseen Data</h2>
-            <center>
-              <table>
-              <tr>
-                <th>Phoneme-level input</th>
-                <th>Word-level input</th>
-              </tr>
-              <tr>
-                <td> <audio controls>
-                  <source src="wav/dream.wav" type="audio/wav">
-                Your browser does not support the audio element.
-                </audio><br>那些你很冒险的梦</td>
-                <td> <audio controls>
-                  <source src="wav/desert.wav" type="audio/wav">
-                Your browser does not support the audio element.
-                </audio><br>我看过沙漠下暴雨</td>
-              </tr>
-            </table>
-              </center>
-            <h2>Samples of DKU's Alma Mater</h2>
-            <center>
-            <table>
-            <tr>
-              <th>Ground Truth (CHN)</th>
-              <th>Synthesized (CHN)</th>
-              <th>Synthesized (ENG)</th>
-            </tr>
-            <tr>
-              <td> <audio controls>
-                <source src="wav/gt_cn.wav" type="audio/wav">
-              Your browser does not support the audio element.
-              </audio></td>
-              <td> <audio controls>
-                <source src="wav/combined_cn.wav" type="audio/wav">
-              Your browser does not support the audio element.
-              </audio></td>
-              <td> <audio controls>
-                <source src="wav/combined_en.wav" type="audio/wav">
-              Your browser does not support the audio element.
-              </audio></td>
-            </tr>
-          </table>
-            </center>
-              <h2 class="title">Alma Mater's Music Notes and Lyrics</h2>
-        
-              <iframe  src="pdf/cn.pdf" width="100%" height="550">
-                  </iframe>
-                
-        </div>
-        <!-- <a class="point" href="#" style="margin-top: 3px;">Work in Progress: Stage III</a> -->
-<!-- 
-    <button type="button" class="collapsible">Find Out More About Tacotron &amp; Tacotron2</button>
-        <div class="content">
-            
-        </div>
-        </div> -->
-    
 
-    <script>
-        var coll = document.getElementsByClassName("collapsible");
-        var i;
-        
-        for (i = 0; i < coll.length; i++) {
-          coll[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var content = this.nextElementSibling;
-            if (content.style.display === "block") {
-              content.style.display = "none";
-            } else {
-              content.style.display = "block";
-            }
-          });
-        }
-        </script>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <!-- <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div> -->
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title" style="width: 100vw;">BiSinger: Bilingual Voice Synthesis for Singing</h1>
+          <div class="is-size-5 publication-authors">
+            <!-- <span class="author-block">
+              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
+            </span> -->
+            <span class="author-block">BLIND</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <!-- <span class="author-block"><sup>1</sup>University of Washington,</span>
+            <span class="author-block"><sup>2</sup>Google Research</span> -->
+            <span class="author-block">BLIND</span>
+          </div>
+          <!-- 
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+               -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
+        free-viewpoint
+        portraits.
+      </h2>
+    </div>
+  </div>
+</section> -->
+
+<!-- 
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/shiba.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/fullbody.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The abstract should appear at the top of the left-hand column of text, about
+            0.5 inch (12 mm) below the title area and no more than 3.125 inches (80 mm) in
+            length.  Leave a 0.5 inch (12 mm) space between the end of the abstract and the
+            beginning of the main text.  The abstract should contain about 100 to 150
+            words, and should be identical to the abstract text submitted electronically
+            along with the paper cover sheet.  All manuscripts must be in English, printed
+            in black ink.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+<!-- 
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+  <div class="container hero-body">
+    <h2 class="title is-3">Demo Samples</h2>
+    <p class="title is-4" style="font-weight: bold; color: #209cee;">
+      Lyrics: <span style="font-size: 1.25em;">我和你心连心</span>
+    </p>
+    <p class="title is-4" style="font-weight: bold; color: #209cee;">
+      Phonemes: <span style="font-size: 1.25em;">W OW HH EH N IY SH IH N L IY AE N SH IH N</span>
+      </p>
+    <table class="table is-fullwidth" style="table-layout: fixed;">
+      <tr>
+        <th>Ground Truth</th>
+        <th>BiSinger</th>
+        <th>DiffSinger</th>
+        <th>Xiaoice</th>
+        <th>Muskits-RNN</th>
+      </tr>
+      <tr>
+        <td> 
+          <audio controls style="width: 100%;">
+            <source src="./static/wavs/gt-sample1.wav" type="audio/wav">
+          Your browser does not support the audio element.
+          </audio>
+        </td>
+        <td> 
+          <audio controls style="width: 100%;">
+            <source src="./static/wavs/bisinger-sample1.wav" type="audio/wav">
+          Your browser does not support the audio element.
+          </audio>
+        </td>
+        <td> 
+          <audio controls style="width: 100%;">
+            <source src="./static/wavs/diffsinger-sample1.wav" type="audio/wav">
+          Your browser does not support the audio element.
+          </audio>
+        </td>
+        <td> 
+          <audio controls style="width: 100%;">
+            <source src="./static/wavs/xiaoice-sample1.wav" type="audio/wav">
+          Your browser does not support the audio element.
+          </audio>
+        </td>
+        <td> 
+          <audio controls style="width: 100%;">
+            <source src="./static/wavs/muskits-rnn-sample1.wav" type="audio/wav">
+          Your browser does not support the audio element.
+          </audio>
+        </td>
+      </tr>
+      <!-- Include as many rows as you have samples -->
+    </table>
+
+    </div>
+  </div>
+</section>
+
+<!-- 
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Visual Effects</h2>
+          <p>
+            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
+            would be impossible without nerfies since it would require going through a wall.
+          </p>
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dollyzoom-stacked.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+
+
+      <div class="column">
+        <h2 class="title is-3">Matting</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              As a byproduct of our method, we can also solve the matting problem by ignoring
+              samples that fall outside of a bounding box during rendering.
+            </p>
+            <video id="matting-video" controls playsinline height="100%">
+              <source src="./static/videos/matting.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Animation</h2>
+
+
+        <h3 class="title is-4">Interpolating states</h3>
+        <div class="content has-text-justified">
+          <p>
+            We can also animate the scene by interpolating the deformation latent codes of two input
+            frames. Use the slider here to linearly interpolate between the left frame and the right
+            frame.
+          </p>
+        </div>
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_start.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+            <p>Start Frame</p>
+          </div>
+          <div class="column interpolation-video-column">
+            <div id="interpolation-image-wrapper">
+              Loading...
+            </div>
+            <input class="slider is-fullwidth is-large is-info"
+                   id="interpolation-slider"
+                   step="1" min="0" max="100" value="0" type="range">
+          </div>
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_end.jpg"
+                 class="interpolation-image"
+                 alt="Interpolation end reference image."/>
+            <p class="is-bold">End Frame</p>
+          </div>
+        </div>
+        <br/>
+
+
+
+        <h3 class="title is-4">Re-rendering the input video</h3>
+        <div class="content has-text-justified">
+          <p>
+            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
+            viewpoint such as a stabilized camera by playing back the training deformations.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 width="75%">
+            <source src="./static/videos/replay.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+
+      </div>
+    </div>
+ -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Ethics Statement</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            We are committed to responsible research and development practices. While our SVS system, BiSinger, holds immense potential, we are fully aware of the ethical concerns it raises, such as voice identification spoofing and impersonation. We assume user consent for speech synthesis and advocate for a protocol to ensure speaker approval and the inclusion of synthesized speech detection models when expanding to unseen speakers. By publishing our work, we aim to raise awareness, promote transparency, and mitigate the risks associated with misuse, emphasizing responsible usage and ethical standards in voice synthesis technology.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</section> 
+
+<!-- 
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <!-- <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div> -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p class="is-size-7">
+            Template: <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 
 </body>
-
 </html>
