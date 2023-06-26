@@ -109,7 +109,7 @@
             <span class="author-block">
               <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
             </span> -->
-              <span class="author-block">BLIND</span>
+              <span class="author-block"><em>BLIND</em></span>
             </div>
 
             <div class="is-size-5 publication-authors">
@@ -301,42 +301,40 @@
             <th>BiSinger (NUS)</th>
             <th>BiSinger (DB4)</th>
             <th>DiffSinger (CMU)</th>
-            <th>Xiaoice</th>
             <th>Muskits-RNN</th>
           </tr>
           <tr>
             <td>
               <audio controls style="width: 100%;">
-                <source src="./static/wavs/gt-sample1.wav" type="audio/wav">
+                <source src="wav/1_cn_01_gt.wav" type="audio/wav">
                 Your browser does not support the audio element.
               </audio>
             </td>
             <td>
               <audio controls style="width: 100%;">
-                <source src="./static/wavs/bisinger-sample1.wav" type="audio/wav">
+                <source src="wav/model-3/chn/Tenor-1_AP我和你心连心AP.wav" type="audio/wav">
                 Your browser does not support the audio element.
               </audio>
             </td>
             <td>
               <audio controls style="width: 100%;">
-                <source src="./static/wavs/diffsinger-sample1.wav" type="audio/wav">
+                <source src="wav/model-7/cn/Tenor-1 | AP我和你心连心AP.wav" type="audio/wav">
                 Your browser does not support the audio element.
               </audio>
             </td>
             <td>
               <audio controls style="width: 100%;">
-                <source src="./static/wavs/xiaoice-sample1.wav" type="audio/wav">
+                <source src="wav/model-0/cn/Tenor-1 | AP我和你心连心AP.wav" type="audio/wav">
                 Your browser does not support the audio element.
               </audio>
             </td>
             <td>
               <audio controls style="width: 100%;">
-                <source src="./static/wavs/muskits-rnn-sample1.wav" type="audio/wav">
+                <source src="wav/rnn/normalizedrnn_我和你心连心.wav" type="audio/wav">
                 Your browser does not support the audio element.
               </audio>
             </td>
           </tr>
-          <!-- Include as many rows as you have samples -->
         </table>
         <p class="title is-5" style="font-weight: bold; color: #209cee;">
           Lyrics: <span style="font-size: 1.25em;">明天会是怎么样呢</span>
@@ -344,6 +342,47 @@
         <p class="title is-5" style="font-weight: bold; color: #209cee;">
           Phonemes: <span style="font-size: 1.25em;">M IY NG T IY AE N HH UW IY SH IY Z AH N M ER IY AE NG N ER</span>
         </p>
+        <table class="table is-fullwidth" style="table-layout: fixed;">
+          <tr>
+            <th>Ground Truth</th>
+            <th>BiSinger (NUS)</th>
+            <th>BiSinger (DB4)</th>
+            <th>DiffSinger (CMU)</th>
+            <th>Muskits-RNN</th>
+          </tr>
+          <tr>
+            <td>
+              <audio controls style="width: 100%;">
+                <source src="wav/2_cn_02_gt.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </td>
+            <td>
+              <audio controls style="width: 100%;">
+                <source src="wav/model-3/chn/Tenor-1_AP明天会是怎么样呢AP.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </td>
+            <td>
+              <audio controls style="width: 100%;">
+                <source src="wav/model-7/cn/Tenor-1 | AP明天会是怎么样呢AP.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </td>
+            <td>
+              <audio controls style="width: 100%;">
+                <source src="wav/model-0/cn/Tenor-1 | AP明天会是怎么样呢AP.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </td>
+            <td>
+              <audio controls style="width: 100%;">
+                <source src="wav/rnn/normalizedrnn_明天会是怎么样呢.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </td>
+          </tr>
+        </table>
         <h3 class="title is-4">2. English Voice Synthesis</h3>
         <p class="title is-5" style="font-weight: bold; color: #209cee;">
           Lyrics: <span style="font-size: 1.25em;">We are family</span>
@@ -351,12 +390,94 @@
         <p class="title is-5" style="font-weight: bold; color: #209cee;">
           Phonemes: <span style="font-size: 1.25em;">W IY AA R F AE M AH L IY</span>
         </p>
+        <table class="table is-fullwidth" style="table-layout: fixed;">
+          <tr>
+            <th>Ground Truth</th>
+            <th>BiSinger (NUS)</th>
+            <th>BiSinger (DB4)</th>
+            <th>DiffSinger (CMU)</th>
+            <th>Muskits-RNN</th>
+          </tr>
+          <tr>
+            <td>
+              <audio controls style="width: 100%;">
+                <source src="wav/3_en_01_gt.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </td>
+            <td>
+              <audio controls style="width: 100%;">
+                <source src="wav/model-3/eng/Tenor-1_AP we are family AP.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </td>
+            <td>
+              <audio controls style="width: 100%;">
+                <source src="wav/model-7/en/Tenor-1 | AP we are family AP.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </td>
+            <td>
+              <audio controls style="width: 100%;">
+                <source src="wav/model-0/en/Tenor-1 | AP we are family AP.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </td>
+            <td>
+              <audio controls style="width: 100%;">
+                <source src="wav/rnn/normalizedrnn_wearefamily.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </td>
+          </tr>
+        </table>
         <p class="title is-5" style="font-weight: bold; color: #209cee;">
           Lyrics: <span style="font-size: 1.25em;">How I wonder what you are</span>
         </p>
         <p class="title is-5" style="font-weight: bold; color: #209cee;">
           Phonemes: <span style="font-size: 1.25em;">HH AW AY W AH N D ER W AH T Y UW AA R</span>
         </p>
+        <table class="table is-fullwidth" style="table-layout: fixed;">
+          <tr>
+            <th>Ground Truth</th>
+            <th>BiSinger (NUS)</th>
+            <th>BiSinger (DB4)</th>
+            <th>DiffSinger (CMU)</th>
+            <th>Muskits-RNN</th>
+          </tr>
+          <tr>
+            <td>
+              <audio controls style="width: 100%;">
+                <source src="wav/4_en_02_gt.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </td>
+            <td>
+              <audio controls style="width: 100%;">
+                <source src="wav/model-3/eng/Tenor-1_AP how I wonder what you are AP.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </td>
+            <td>
+              <audio controls style="width: 100%;">
+                <source src="wav/model-7/en/Tenor-1 | AP how I wonder what you are AP.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </td>
+            <td>
+              <audio controls style="width: 100%;">
+                <source src="wav/model-0/en/Tenor-1 | AP how I wonder what you are AP.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </td>
+            <td>
+              <audio controls style="width: 100%;">
+                <source src="wav/rnn/normalizedrnn_howiwonderwhatyouare.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </td>
+          </tr>
+        </table>
         <h3 class="title is-4">3. Code-Switch Voice Synthesis</h3>
         <p class="title is-5" style="font-weight: bold; color: #209cee;">
           Lyrics: <span style="font-size: 1.25em;">开始倒数 three two one I am always online </span>
@@ -365,6 +486,40 @@
           Phonemes: <span style="font-size: 1.25em;">K AY SH IY D AW SH UW TH R IY T UW W AH N AY AE M AO L W EY Z AO N
             L AY N</span>
         </p>
+        <table class="table is-fullwidth" style="table-layout: fixed;">
+          <tr>
+            <th>Ground Truth</th>
+            <th>BiSinger (NUS)</th>
+            <th>BiSinger (DB4)</th>
+            <th>DiffSinger (CMU)</th>
+          </tr>
+          <tr>
+            <td>
+              <audio controls style="width: 100%;">
+                <source src="wav/5_mix_01_gt.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </td>
+            <td>
+              <audio controls style="width: 100%;">
+                <source src="wav/model-3/mix/Tenor-1_AP 开始倒数 three two one i am always online AP.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </td>
+            <td>
+              <audio controls style="width: 100%;">
+                <source src="wav/model-7/mix/Tenor-1 | AP 开始倒数 SP three two one i am always online AP.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </td>
+            <td>
+              <audio controls style="width: 100%;">
+                <source src="wav/model-0/mix/Tenor-1 | AP 开始倒数 SP three two one i am always online AP.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </td>
+          </tr>
+        </table>
         <p class="title is-5" style="font-weight: bold; color: #209cee;">
           Lyrics: <span style="font-size: 1.25em;">故事细腻 romantic mystery 神秘</span>
         </p>
@@ -372,6 +527,40 @@
           Phonemes: <span style="font-size: 1.25em;">G UW SH IY X IY N IY R OW M AE N T IH K M IH S T ER IY SH AH N M
             IY</span>
         </p>
+      <table class="table is-fullwidth" style="table-layout: fixed;">
+        <tr>
+          <th>Ground Truth</th>
+          <th>BiSinger (NUS)</th>
+          <th>BiSinger (DB4)</th>
+          <th>DiffSinger (CMU)</th>
+        </tr>
+        <tr>
+          <td>
+            <audio controls style="width: 100%;">
+              <source src="wav/6_mix_02_gt.wav" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
+          <td>
+            <audio controls style="width: 100%;">
+              <source src="wav/model-3/mix/Tenor-1_AP 故事细腻 romantic mystery 神秘 AP.wav" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
+          <td>
+            <audio controls style="width: 100%;">
+              <source src="wav/model-7/mix/Tenor-1 | AP 故事细腻 SP romantic mystery SP 神秘 AP.wav" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
+          <td>
+            <audio controls style="width: 100%;">
+              <source src="wav/model-0/mix/Tenor-1 | AP 故事细腻 SP romantic mystery SP 神秘 AP.wav" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
+        </tr>
+      </table>
       </div>
     </div>
   </section>
