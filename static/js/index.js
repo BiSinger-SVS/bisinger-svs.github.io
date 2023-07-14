@@ -88,7 +88,7 @@ function toggleSamples() {
         for (var i = 0; i < samples.length; i++) {
             samples[i].style.display = 'none';
         }
-        document.getElementsByClassName('toggle-samples-button')[0].innerHTML = 'Show More Samples';
+        document.getElementsByClassName('toggle-samples-button')[0].innerHTML = '<i class="fas fa-plus fa-fw"></i>More Samples';
         isCNSamplesVisible = false;
     } 
     // If samples are currently hidden, show them
@@ -96,7 +96,7 @@ function toggleSamples() {
         for (var i = 0; i < samples.length; i++) {
             samples[i].style.display = 'block';
         }
-        document.getElementsByClassName('toggle-samples-button')[0].innerHTML = 'Hide More Samples';
+        document.getElementsByClassName('toggle-samples-button')[0].innerHTML = '<i class="fas fa-chevron-up fa-fw"></i>Hide Samples';
         isCNSamplesVisible = true;
     }
 }
@@ -112,7 +112,7 @@ function toggleENSamples() {
         for (var i = 0; i < samples.length; i++) {
             samples[i].style.display = 'none';
         }
-        document.getElementsByClassName('toggle-ensamples-button')[0].innerHTML = 'Show More Samples';
+        document.getElementsByClassName('toggle-ensamples-button')[0].innerHTML = '<i class="fas fa-plus fa-fw"></i>More Samples';
         isENSamplesVisible = false;
     } 
     // If samples are currently hidden, show them
@@ -120,7 +120,7 @@ function toggleENSamples() {
         for (var i = 0; i < samples.length; i++) {
             samples[i].style.display = 'block';
         }
-        document.getElementsByClassName('toggle-ensamples-button')[0].innerHTML = 'Hide More Samples';
+        document.getElementsByClassName('toggle-ensamples-button')[0].innerHTML = '<i class="fas fa-chevron-up fa-fw"></i>Hide Samples';
         isENSamplesVisible = true;
     }
 }
@@ -135,7 +135,7 @@ function toggleMIXSamples() {
     for (var i = 0; i < samples.length; i++) {
         samples[i].style.display = 'none';
     }
-    document.getElementsByClassName('toggle-ensamples-button')[0].innerHTML = 'Show More Samples';
+    document.getElementsByClassName('toggle-ensamples-button')[0].innerHTML = '<i class="fas fa-plus fa-fw"></i>More Samples';
     isMIXSamplesVisible = false;
 } 
 // If samples are currently hidden, show them
@@ -143,7 +143,7 @@ else {
     for (var i = 0; i < samples.length; i++) {
         samples[i].style.display = 'block';
     }
-    document.getElementsByClassName('toggle-ensamples-button')[0].innerHTML = 'Hide More Samples';
+    document.getElementsByClassName('toggle-ensamples-button')[0].innerHTML = '<i class="fas fa-chevron-up fa-fw"></i>Hide Samples';
     isMIXSamplesVisible = true;
 }
 }
@@ -159,7 +159,7 @@ function toggleMIXSamples() {
     for (var i = 0; i < samples.length; i++) {
         samples[i].style.display = 'none';
     }
-    document.getElementsByClassName('toggle-mixsamples-button')[0].innerHTML = 'Show More Samples';
+    document.getElementsByClassName('toggle-mixsamples-button')[0].innerHTML = '<i class="fas fa-plus fa-fw"></i>More Samples';
     isMIXSamplesVisible = false;
 } 
 // If samples are currently hidden, show them
@@ -167,7 +167,7 @@ else {
     for (var i = 0; i < samples.length; i++) {
         samples[i].style.display = 'block';
     }
-    document.getElementsByClassName('toggle-mixsamples-button')[0].innerHTML = 'Hide More Samples';
+    document.getElementsByClassName('toggle-mixsamples-button')[0].innerHTML = '<i class="fas fa-chevron-up fa-fw"></i>Hide Samples';
     isMIXSamplesVisible = true;
 }
 }
