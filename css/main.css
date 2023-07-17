@@ -328,3 +328,7 @@ table {
     border-right: solid black;
     padding-bottom: 10px;
   }
+
+tr.noBorder th{
+    border: 0;
+  }

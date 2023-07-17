@@ -207,7 +207,6 @@
             </div>
           </div>
   </section>
-<!-- 
   <section class="hero is-light is-small">
     <div class="hero-body">
       <div class="container hero-body">
@@ -3827,16 +3826,14 @@
           </a>
       </div>
     </div>
-  </section> -->
-
-
+  </section>
 <section class="section">
   <div class="container is-max-desktop">
     <div class="content">
       <h2 class="title is-3">Dataset Adaptation Demo</h2>
       <h2 class="title is-4">1. Timbre Conversion Method</h2>
       <p class="title is-5" style="font-weight: bold; color: #209cee;">
-        Singer info: <span style="font-size: 1.25em;">NUS-MPOL#20</span>
+        Singer info: <span style="font-size: 1.25em;">NUS#MPOL#20</span>
       </p>
       <p class="title is-5" style="font-weight: bold; color: #209cee;">
         Lyrics: <span style="font-size: 1.25em;">I will be right here waiting for you </span>
@@ -3882,13 +3879,13 @@
         </tr>
       </table>
       <p class="title is-5" style="font-weight: bold; color: #209cee;">
-        Singer info: <span style="font-size: 1.25em;">NUS-ZHIY#02</span>
+        Singer info: <span style="font-size: 1.25em;">NUS#ZHIY#02</span>
       </p>
       <p class="title is-5" style="font-weight: bold; color: #209cee;">
         Lyrics: <span style="font-size: 1.25em;">Far, a long, long way to run</span>
       </p>
       <table class="table is-fullwidth" style="table-layout: fixed;">
-        <tr>
+        <tr class="noBorder">
           <th>Original Singer</th>
           <th>Target Singer (S)</th>
           <th>Target Singer (A)</th>
@@ -3928,44 +3925,77 @@
           </td>
         </tr>
       </table>
+      <!-- insert a horizontal line below -->
+      <hr style="border-top: 1px solid #209cee;">
+      <table class="table is-fullwidth" style="table-layout: fixed;">
+        <tr class="noBorder">
+          <th>Refrence Audio from M4Singer</th>
+          <th>Target Singer (S)</th>
+          <th>Target Singer (A)</th>
+          <th>Target Singer (T)</th>
+          <th>Target Singer (B)</th>
+        </tr>
+        <tr>
+          <td>
+          </td>
+          <td>
+            <audio controls style="width: 100%;">
+              <source src="https://fastly.jsdelivr.net/gh/bisinger-svs/bisinger-svs.github.io/svc/Soprano|0002.wav" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
+          <td>
+            <audio controls style="width: 100%;">
+              <source src="https://fastly.jsdelivr.net/gh/bisinger-svs/bisinger-svs.github.io/svc/Alto|0014.wav" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
+          <td>
+            <audio controls style="width: 100%;">
+              <source src="https://fastly.jsdelivr.net/gh/bisinger-svs/bisinger-svs.github.io/svc/Tenor|0006.wav" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
+          <td>
+            <audio controls style="width: 100%;">
+              <source src="https://fastly.jsdelivr.net/gh/bisinger-svs/bisinger-svs.github.io/svc/Bass|0010.wav" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
+        </tr>
+      </table>
       <h2 class="title is-4">2. Pitch Shift Method</h2>
       <p class="title is-5" style="font-weight: bold; color: #209cee;">
-        Speech data info: <span style="font-size: 1.25em;">NUS-MPOL#20</span>
+        Speech data info: <span style="font-size: 1.25em;">DB4#CN#000044</span>
       </p>
       <p class="title is-5" style="font-weight: bold; color: #209cee;">
-        Scripts: <span style="font-size: 1.25em;">I will be right here waiting for you </span>
+        Scripts: <span style="font-size: 1.25em;">他们脱掉笨重的冬衣走起路来腰杆挺直步履轻盈</span>
       </p>
       <table class="table is-fullwidth" style="table-layout: fixed;">
         <tr>
           <th>Original Utterance</th>
-          <th>Pitch Shift</th>
+          <th>Pitch Shift Utterance</th>
         </tr>
         <tr>
           <td>
             <audio controls style="width: 100%;">
-              <source src="https://fastly.jsdelivr.net/gh/bisinger-svs/bisinger-svs.github.io/svc/MPOL#20#10_ori.wav" type="audio/wav">
+              <source src="https://fastly.jsdelivr.net/gh/bisinger-svs/bisinger-svs.github.io/db4/db4|cn|000044.wav" type="audio/wav">
               Your browser does not support the audio element.
             </audio>
           </td>
           <td>
             <audio controls style="width: 100%;">
-              <source src="https://fastly.jsdelivr.net/gh/bisinger-svs/bisinger-svs.github.io/svc/MPOL#20#10_soprano.wav" type="audio/wav">
-              Your browser does not support the audio element.
-            </audio>
-          </td>
-          <td>
-            <audio controls style="width: 100%;">
-              <source src="https://fastly.jsdelivr.net/gh/bisinger-svs/bisinger-svs.github.io/svc/MPOL#20#10_alto.wav" type="audio/wav">
+              <source src="https://fastly.jsdelivr.net/gh/bisinger-svs/bisinger-svs.github.io/db4/db4-s|cn|000044.wav" type="audio/wav">
               Your browser does not support the audio element.
             </audio>
           </td>
         </tr>
       </table>
       <p class="title is-5" style="font-weight: bold; color: #209cee;">
-        Speech Data Info: <span style="font-size: 1.25em;">NUS-ZHIY#02</span>
+        Speech Data Info: <span style="font-size: 1.25em;">DB4#EN#300003</span>
       </p>
       <p class="title is-5" style="font-weight: bold; color: #209cee;">
-        Scripts: <span style="font-size: 1.25em;">Far, a long, long way to run</span>
+        Scripts: <span style="font-size: 1.25em;">When I found out about her death I was shock but not surprised she said</span>
       </p>
       <table class="table is-fullwidth" style="table-layout: fixed;">
         <tr>
@@ -3975,13 +4005,13 @@
         <tr>
           <td>
             <audio controls style="width: 100%;">
-              <source src="https://fastly.jsdelivr.net/gh/bisinger-svs/bisinger-svs.github.io/svc/ZHIY#02#24_ori.wav" type="audio/wav">
+              <source src="https://fastly.jsdelivr.net/gh/bisinger-svs/bisinger-svs.github.io/db4/db4|en|300003.wav" type="audio/wav">
               Your browser does not support the audio element.
             </audio>
           </td>
           <td>
             <audio controls style="width: 100%;">
-              <source src="https://fastly.jsdelivr.net/gh/bisinger-svs/bisinger-svs.github.io/svc/ZHIY#02#24_soprano.wav" type="audio/wav">
+              <source src="https://fastly.jsdelivr.net/gh/bisinger-svs/bisinger-svs.github.io/db4/db4-s|en|300003.wav" type="audio/wav">
               Your browser does not support the audio element.
             </audio>
           </td>
