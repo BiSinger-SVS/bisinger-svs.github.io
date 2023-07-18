@@ -80,7 +80,7 @@ def main():
                     html += generate_html_for_wav(file, phonemes, lang)
 
     # write the html to a file
-    with open('output.html', 'w') as f:
+    with open('output_new.html', 'w') as f:
         f.write(html)
 
 if __name__ == '__main__':
