@@ -89,33 +89,32 @@
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title" style="width: 100vw;">BiSinger: Bilingual Singing Voice Synthesis</h1>
             <div class="is-size-5 publication-authors">
-              <!-- <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
+              <span class="author-block">
+              <a href="#">Huali Zhou</a><sup>1,2*</sup>,</span>
             <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
+              <a href="https://yueqianlin.com">Yueqian Lin</a><sup>2*</sup>,</span>
             <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
+              <a href="#">Yao Shi</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
+              <a href="https://scholars.duke.edu/person/Peng.Sun1">Sun Peng</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
+              <a href="https://scholars.duke.edu/person/MingLi">Ming Li</a><sup>1,2†</sup>
             </span>
-            <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
-            </span> -->
-              <span class="author-block"><em>BLIND</em></span>
+              <!-- <span class="author-block"><em>BLIND</em></span> -->
             </div>
 
             <div class="is-size-5 publication-authors">
-              <!-- <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Google Research</span> -->
-              <span class="author-block">BLIND</span>
+              <span class="author-block"><sup>1</sup>Wuhan University,</span>
+            <span class="author-block"><sup>2</sup>Duke Kunshan University</span>
+              <!-- <span class="author-block">BLIND</span> -->
             </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>*</sup>Equal contribution</span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>†</sup>Corresponding author: <a href="mailto:ming.li369@duke.edu">ming.li369@duke.edu</a></span>
           <!-- code will be available once published -->
           <div class="column has-text-centered">
             <span class="link-block">
@@ -126,6 +125,13 @@
                 </span>
                 <span>Code</span>
                 </a>
+              <a href="https://arxiv.org/abs/2309.14089"
+                class="external-link button is-normal is-rounded is-dark">
+               <span class="icon">
+                   <i class="ai ai-arxiv"></i>
+               </span>
+               <span>Paper</span>
+               </a>
           </div>
             <!-- 
           <div class="column has-text-centered">
@@ -191,7 +197,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Although Singing Voice Synthesis (SVS) has made great strides with advanced Text-to-Speech (TTS) techniques, multilingual singing voice modeling remains relatively uncharted. Existing methods typically require separate models per language. Based on the Pinyin phoneme set, current Chinese SVS systems cannot accurately represent both Chinese and English, hindering code-switch SVS. To address this gap, we design a shared representation between Chinese and English singing voices, achieved by using the CMU dictionary with mapping rules. In an innovative approach, we merge monolingual singing datasets with established singing voice conversion techniques to generate bilingual singing voices while also exploring the potential of using accessible speech data. Experiments confirm that our language-independent representation and incorporation of other datasets enable a single model with enhanced performance in English and code-switch SVS while maintaining the performance on Chinese songs.
+              Although Singing Voice Synthesis (SVS) has made great strides with Text-to-Speech (TTS) techniques, multilingual singing voice modeling remains relatively unexplored. This paper presents BiSinger, a bilingual SVS system for English and Chinese Mandarin. Current systems require separate models per language and cannot accurately represent both Chinese and English, hindering code-switch SVS. To address this gap, we design a shared representation between Chinese and English singing voices, achieved by using the CMU dictionary with mapping rules. We fuse monolingual singing datasets with established singing voice conversion techniques to generate bilingual singing voices while also exploring the potential use of bilingual speech data. Experiments affirm that our language-independent representation and incorporation of related datasets enable a single model with enhanced performance in English and code-switch SVS while maintaining Chinese song performance.
             </p>
           </div>
           </div>
